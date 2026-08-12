@@ -1,0 +1,235 @@
+/* =========================================================
+   3_lore.css — compacted
+========================================================= */
+
+.wrapper{
+    background-image: url("../../public/img/lore_background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main{
+    flex: 1;
+    min-width: 0;
+    height: 100vh;
+    display: flex;
+}
+
+/* MAIN CONTENT (desktop default) */
+.Main_Content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: clamp(32px, 5vw, 96px);
+    padding: clamp(32px, 4vw, 64px) clamp(32px, 6vw, 120px);
+}
+
+/* WRAPPERS */
+.Lore_Info_Wrapper,
+.Lore_Images_Wrapper{
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Lore_Info_Wrapper{ flex: 6; }
+.Lore_Images_Wrapper{ flex: 4; }
+
+/* TEXT */
+.Lore_Info{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(16px, 2vw, 24px);
+    max-width: 720px;
+    min-height: 0;
+    max-height: 100%;
+    overflow: visible; /* desktop: visible; on small screens we enable overflow-y */
+    width: 100%;
+    color: black;
+}
+.Lore_Info *{ color: inherit; }
+
+.Lore_Info h1{
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 200;
+    line-height: 1;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.Lore_Info p{
+    font-size: clamp(1rem, .45vw + .9rem, 1.2rem);
+    text-align: justify;
+    text-indent: 2rem;
+}
+
+/* Specific description blocks share the same p sizing */
+.Law_and_Crime_Decription p,
+.Sunset_Of_Romance_Description p,
+.Medicine_Description p{
+    font-size: clamp(0.8rem, .35vw + .75rem, 1rem);
+}
+
+
+
+
+
+/* IMAGES */
+.Lore_Images{
+    position: relative;
+    width: min(42vw, 760px);
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.Lore_Images img{
+    position: absolute;
+    object-fit: contain;
+    object-position: center;
+    user-select: none;
+    pointer-events: none;
+}
+
+.Lore_Img{
+    width: min(100%, 760px);
+    height: auto;
+}
+
+/* =========================================================
+   BREAKPOINTS
+========================================================= */
+
+/* IMAGE TOP + mobile layout tweaks */
+@media (max-width: 1200px){
+    .Main_Content{
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0;
+        height: 100vh; /* база для дележки (как в оригинале) */
+    }
+
+    /* order: image first, text below */
+    .Lore_Images_Wrapper{ order: 1; height: 100%; flex: 4 }
+    .Lore_Info_Wrapper  { order: 2; height: 100%; flex: 6}
+
+    /* make both blocks equal-flex and allow proper flex overflow */
+    .Lore_Images_Wrapper,
+    .Lore_Info_Wrapper{
+        min-height: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Daily_Lives_Description p{
+        font-size: clamp(1.1rem, .4vw + .8rem, 1.15rem);
+    /* font-size: clamp(1rem, .45vw + .9rem, 1.2rem); */
+
+    }
+
+
+    .Lore_Info{
+        align-items: center;
+        max-width: 760px;
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+    }
+
+    .Lore_Info_Description{
+        height: 67.5%;
+    }
+
+    .scroll_box{
+        scrollbar-gutter: stable;
+        overflow-y: auto;
+        padding: 0 10px; /* space for scrollbar */
+
+        /* Создаем маску, которая управляется через CSS-переменные */
+        --mask-top: rgba(0, 0, 0, 0);
+        --mask-bottom: rgba(0, 0, 0, 0);
+
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            var(--mask-top) 0%,
+            rgba(0, 0, 0, 1) 10%,
+            rgba(0, 0, 0, 1) 90%,
+            var(--mask-bottom) 100%
+        );
+        mask-image: linear-gradient(
+            to bottom,
+            var(--mask-top) 0%,
+            rgba(0, 0, 0, 1) 15%,
+            rgba(0, 0, 0, 1) 85%,
+            var(--mask-bottom) 100%
+        );
+
+        -webkit-mask-clip: padding-box;
+        mask-clip: padding-box;
+    }
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Дорожка */
+::-webkit-scrollbar-track {
+    background:  #bdbdbd;
+}
+
+/* Ползунок */
+::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+/* При наведении */
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+    .Lore_Images{ width: min(70vw, 520px); }
+    .Lore_Img{ height: 100%; width: auto; }
+}
+
+/* small laptop */
+@media (max-width: 1200px){
+    .Main_Content{ gap: .5rem; padding: .5rem; }
+    .Lore_Images{ width: min(38vw, 520px); }
+    .Lore_Info h1{ font-size: 2.8rem; }
+    .Lore_Info p{ font-size: 1rem; line-height: 1.65; }
+    /* .Entertainment_Description p{font-size: 0.8rem; } */
+}
+
+/* tablet */
+@media (max-width: 900px){
+    .Main_Content{ gap: 0rem; padding: 2rem; }
+    .Lore_Images{ width: min(80vw, 520px); }
+    .Lore_Info{ max-width: none; }
+}
+
+/* phone */
+@media (max-width: 600px){
+    .Main_Content{ padding: 1.5rem 1.25rem; gap: 2rem; }
+    .Lore_Images{ width: min(92vw, 430px); }
+    .Lore_Info h1{ font-size: 2.3rem; }
+    .Lore_Info p{ font-size: .95rem; line-height: 1.6; text-indent: 1.2rem; }
+}
+
+/* small phone */
+@media (max-width: 480px){
+    .Main_Content{ padding: 1rem; gap: 1.5rem; }
+    .Lore_Images{ width: 100%; max-width: 340px; }
+    .Lore_Info h1{ font-size: 2rem; }
+    .Lore_Info p{ font-size: .9rem; line-height: 1.55; text-indent: 1rem; }
+}
+
+/* fix 1 */

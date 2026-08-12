@@ -1,0 +1,188 @@
+/* =========================
+   EMBLA CORE
+========================= */
+
+.lore-slider {
+	position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.lore-slider .embla__viewport {
+  overflow: hidden;
+  height: 100%;
+
+}
+
+.lore-slider .embla__container {
+	display: flex;
+	width: 100%;
+  height: 100%;
+	
+}
+
+.lore-slider .embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* =========================
+   CONTROLS ROOT
+========================= */
+
+.embla__controls_Wrapper {
+  /* position: relative; */
+	/* width: 600px;
+  height: 100px; */
+	/* width: 400px; */
+	z-index: 10;
+	position: absolute;
+  top: 87.5%;
+	left: 50%;
+	transform: translateX(-50%);
+  font-weight: 300;
+  background-color: rgba(185, 185, 185, 0.562);
+  /* opacity: 0.75; */
+  backdrop-filter: blur(4px);
+  border-radius: 100px;
+  padding: 8px 50px 12px;
+}
+
+.embla__controls {
+	/* width: 400px;
+	z-index: 10;
+	position: absolute;
+	top: 82.5%;
+	left: 50%;
+	transform: translateX(-50%); */
+  width: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+	/* margin-top: 20px; */
+}
+
+/* =========================
+   ROW (ФИКСИРОВАННАЯ СЦЕНА)
+========================= */
+
+.embla__controls-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/* gap: 220px; */
+  position: relative;
+  width: 100%;
+  /* height: 60px;  */
+  /* фиксируем геометрию */
+}
+
+/* =========================
+   CENTER BLOCK (НЕ ВЛИЯЕТ НИ НА ЧТО)
+========================= */
+
+.embla__zone--center {
+	position: absolute;
+	 top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);  
+	gap: 12px;
+	display: flex;
+	flex-direction: row;
+}
+
+.embla__counter,
+.embla__title {
+
+	
+  font-size: 1.2rem;
+  white-space: nowrap;
+  color: rgba(0,0,0,0.6); 
+}
+
+.embla__counter__current,
+.embla__counter__total,
+.embla__title {
+  color: black;
+}
+
+/* =========================
+   BUTTONS (ФИКС ОТ ЦЕНТРА)
+========================= */
+
+
+/* =========================
+   BUTTON STYLE
+========================= */
+
+.embla__button {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  /* border: 2px solid rgba(0,0,0,0.3); */
+  border: transparent;
+
+  background: transparent;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.embla__button:hover {
+  transform: scale(1.05);
+}
+
+.embla__button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.embla__button__svg {
+  width: 60%;
+  height: 60%;
+}
+
+/* =========================
+   DOTS
+========================= */
+
+.embla__dots {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.embla__dot {
+  width: 40px;
+  height: 5px;
+  border: none;
+  background: rgba(0,0,0,0.5);
+  cursor: pointer;
+  padding: 0;
+}
+
+.embla__dot--selected {
+	border-radius: 5px;
+	border: 0.1px solid;
+	border-color: rgba(0, 0, 0, 0.25);
+  background: #F9E59F;
+  /* transform: scale(1.2); */
+}
+
+
+
+
