@@ -1,0 +1,24 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kapiza/mobile_layout_test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kapiza/mobile_layout_test/issues"
+  },
+  "homepage": "https://github.com/Kapiza/mobile_layout_test#readme",
+  "description": "",
+  "dependencies": {
+    "embla-carousel": "^8.6.0",
+    "handlebars": "^4.7.9"
+  }
+}

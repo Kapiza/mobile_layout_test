@@ -12,7 +12,7 @@
 main{
     flex: 1;
     min-width: 0;
-    height: 100vh;
+    height: 100%;
     display: flex;
 }
 
@@ -47,7 +47,6 @@ main{
     max-width: 720px;
     min-height: 0;
     max-height: 100%;
-    overflow: visible; /* desktop: visible; on small screens we enable overflow-y */
     width: 100%;
     color: black;
 }
@@ -86,7 +85,6 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: visible;
 }
 
 .Lore_Images img{
@@ -113,12 +111,12 @@ main{
         align-items: center;
         justify-content: flex-start;
         gap: 0;
-        height: 100vh; /* база для дележки (как в оригинале) */
+        height: 100%; /* база для дележки (как в оригинале) */
     }
 
     /* order: image first, text below */
-    .Lore_Images_Wrapper{ order: 1; height: 100%; flex: 4 }
-    .Lore_Info_Wrapper  { order: 2; height: 100%; flex: 6}
+    .Lore_Images_Wrapper{ order: 1; height: 100%; flex: 6}
+    .Lore_Info_Wrapper  { order: 2; height: 100%; flex: 4}
 
     /* make both blocks equal-flex and allow proper flex overflow */
     .Lore_Images_Wrapper,
@@ -148,12 +146,11 @@ main{
         height: 67.5%;
     }
 
-    .scroll_box{
+    /* .scroll_box{
         scrollbar-gutter: stable;
         overflow-y: auto;
-        padding: 0 10px; /* space for scrollbar */
+        padding: 0 10px; 
 
-        /* Создаем маску, которая управляется через CSS-переменные */
         --mask-top: rgba(0, 0, 0, 0);
         --mask-bottom: rgba(0, 0, 0, 0);
 
@@ -174,7 +171,7 @@ main{
 
         -webkit-mask-clip: padding-box;
         mask-clip: padding-box;
-    }
+    } */
 
 ::-webkit-scrollbar {
     width: 5px;
@@ -233,3 +230,26 @@ main{
 }
 
 /* fix 1 */
+/* BREEAKPOINT */
+/* screen width < 500px - mobile layout */
+@media (max-width: 500px) {
+
+    html{
+        overflow: hidden;
+    }
+    body {
+        overflow: hidden;
+    }
+
+    .wrapper{
+        height: 100vh;
+    }
+
+    .Main_Content {
+        /* padding-bottom: 128px; */
+        height: 80%;
+        overflow-y: scroll;
+    }
+
+}
+
