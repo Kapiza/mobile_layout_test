@@ -248,11 +248,31 @@ main{
         /* padding-bottom: 128px; */
         height: 85%;
         overflow-y: scroll;
+        scrollbar-width: none;  
     }
+
+    .Main_Content{
+        --fade: 48px;                      /* высота затуманенной зоны */
+        --mask-bottom: rgba(0, 0, 0, 0);   /* 0 = fade включён, 1 = выключен */
+
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            #000 calc(100% - var(--fade)),
+            var(--mask-bottom) 100%
+        );
+        mask-image: linear-gradient(
+            to bottom,
+            #000 calc(100% - var(--fade)),
+            var(--mask-bottom) 100%
+        );
+    }
+
     .Lore_Info h1{ font-size: 3rem; white-space: normal; overflow-wrap: break-word; text-align: center; }
     .Lore_Info p{ font-size: 1.375rem; line-height: 1.25; text-indent: 1rem; }
 
     .Мир_Прекрасной_Эпохи h1{ font-size: 2.75rem;  }
+
+    
 
 }
 
