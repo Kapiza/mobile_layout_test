@@ -11,8 +11,8 @@
 
 main{
     flex: 1;
-    min-width: 0;
-    height: 100%;
+    min-width: 0;        /* иначе содержимое растягивает flex-элемент по ширине */
+    min-height: 0;       /* иначе растягивает по высоте */
     display: flex;
 }
 
