@@ -634,11 +634,11 @@
                 {{#each slides}}
                 <div class="embla__slide">
                     <div class="Main_Content_Wrapper">
-                        <div class="Main_Content">
+                        <div class="Main_Content {{cls}}">
                             <div class="Lore_Info_Wrapper">
                                 <div class="Lore_Info">
                                 <h1>{{title}}</h1>
-                                <div class="Lore_Info_Description {{cls}}{{#unless noScroll}} scroll_box{{/unless}}">
+                                <div class="Lore_Info_Description {{#unless noScroll}} scroll_box{{/unless}}">
                                     {{#each paragraphs}}
                                     <p>{{this}}</p>
                                     {{/each}}

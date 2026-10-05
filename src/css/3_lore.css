@@ -67,9 +67,9 @@ main{
 }
 
 /* Specific description blocks share the same p sizing */
-.Law_and_Crime_Decription p,
-.Sunset_Of_Romance_Description p,
-.Medicine_Description p{
+.Закон_и_преступность p,
+.Закат_Романтики p,
+.Медицина p{
     font-size: clamp(0.8rem, .35vw + .75rem, 1rem);
 }
 
@@ -251,6 +251,8 @@ main{
     }
     .Lore_Info h1{ font-size: 3rem; white-space: normal; overflow-wrap: break-word; text-align: center; }
     .Lore_Info p{ font-size: 1.375rem; line-height: 1.25; text-indent: 1rem; }
+
+    .Мир_Прекрасной_Эпохи h1{ font-size: 2.75rem;  }
 
 }
 
