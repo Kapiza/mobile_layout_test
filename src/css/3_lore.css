@@ -250,7 +250,7 @@ main{
         overflow-y: scroll;
     }
     .Lore_Info h1{ font-size: 2.5rem; }
-    .Lore_Info p{ font-size: 1.25rem; line-height: 1; text-indent: 1rem; }
+    .Lore_Info p{ font-size: 1.375rem; line-height: 1.25; text-indent: 1rem; }
 
 }
 
