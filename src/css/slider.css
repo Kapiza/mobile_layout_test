@@ -184,6 +184,11 @@
   /* transform: scale(1.2); */
 }
 
-
+@media (max-width: 500px) {
+  .embla__controls_Wrapper {
+    top: unset;
+    bottom: 50px;
+  }
+}
 
 
