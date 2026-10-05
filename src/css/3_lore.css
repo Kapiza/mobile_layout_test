@@ -54,7 +54,7 @@ main{
 
 .Lore_Info h1{
     font-size: clamp(2.5rem, 4vw, 3.5rem);
-    font-weight: 200;
+    font-weight: medium;
     line-height: 1;
     white-space: nowrap;
     width: fit-content;
@@ -229,8 +229,7 @@ main{
     .Lore_Info p{ font-size: .9rem; line-height: 1.55; text-indent: 1rem; }
 }
 
-/* fix 1 */
-/* BREEAKPOINT */
+/* BREAKPOINT */
 /* screen width < 500px - mobile layout */
 @media (max-width: 500px) {
 
@@ -250,6 +249,8 @@ main{
         height: 85%;
         overflow-y: scroll;
     }
+
+    .Lore_Info p{ font-size: 1.5rem; line-height: 1.55; text-indent: 1rem; }
 
 }
 
