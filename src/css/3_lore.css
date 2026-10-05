@@ -247,7 +247,7 @@ main{
 
     .Main_Content {
         /* padding-bottom: 128px; */
-        height: 80%;
+        height: 90%;
         overflow-y: scroll;
     }
 
