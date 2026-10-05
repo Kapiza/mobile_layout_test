@@ -50,7 +50,7 @@ const slides = [
 
   // 5. Закон и преступность
   {
-    title: 'Закон и\u00A0преступность',
+    title: 'Закон и\u00A0преступность ;LF;FQLF[QWF[LFWQ[L',
     cls: 'Law_and_Crime_Decription',
     noScroll: true, // в оригинале у этого слайда нет scroll_box
     image: 'lore_img_5.png',
