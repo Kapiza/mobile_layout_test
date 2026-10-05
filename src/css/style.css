@@ -393,21 +393,31 @@ main {
 }
 
 .Devider{
-    height: 24px;
+    height: 32px;
     width: 1px;
     background: #000;
 }
 
 .Menu_Navigation_Icon {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
 }
 
-.Menu_Navigation_Icon svg path,
+.Menu_Navigation_Icon svg {
+    /* width: 1.5em;
+    height: 1.5em; */
+    color: #e3e3e3;
+    --stroke: 0;                                  /* 0 = как в оригинале */
+    /* stroke-width: clamp(0px, var(--stroke), 1.2px); */
+    stroke-width: 0px;
+
+}
+
+/* .Menu_Navigation_Icon svg path,
 .Menu_Navigation_Icon svg polygon {
     fill: #000;
     stroke: #000;
-}
+} */
 
 
 .Menu * {
