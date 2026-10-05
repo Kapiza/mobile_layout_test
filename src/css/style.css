@@ -376,7 +376,7 @@ main {
 }
 
 .Menu_Navigation {
-    font-size: 1rem;
+    font-size: 1.25rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
