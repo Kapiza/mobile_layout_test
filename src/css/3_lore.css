@@ -249,7 +249,7 @@ main{
         height: 85%;
         overflow-y: scroll;
     }
-    .Lore_Info h1{ font-size: 3rem; }
+    .Lore_Info h1{ font-size: 3rem; white-space: normal; overflow-wrap: break-word; text-align: center; }
     .Lore_Info p{ font-size: 1.375rem; line-height: 1.25; text-indent: 1rem; }
 
 }
