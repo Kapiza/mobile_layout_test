@@ -167,8 +167,9 @@
 }
 
 .embla__dot {
-  width: 30px;
-  height: 5px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
   border: none;
   background: #BEBEBE;
   cursor: pointer;
@@ -177,7 +178,7 @@
 
 .embla__dot--selected {
   width: 40px;
-	border-radius: 5px;
+	border-radius: 1000px;
 	/* border: 0.1px solid; */
 	/* border-color: #BEBEBE; */
   background: #000000;
