@@ -2,7 +2,7 @@
 // noScroll - true: не добавлять класс scroll_box (необязательно)
 // image    - имя файла в public/img/ (необязательно)
 
-const slides = [
+const lore_slides = [
   // 1. Мир "Прекрасной эпохи"
   {
     title: 'Мир "Прекрасной\u00A0эпохи"',

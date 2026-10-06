@@ -384,6 +384,7 @@ main {
 .Menu_Navigation {
     width: 100%;
     font-size: 1.25rem;
+    font-weight: 450;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -397,6 +398,10 @@ main {
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+.Menu_Navigation li.Menu_Navigation_Item_Active{
+    background: #F9E59F;
 }
 
 .Devider{
@@ -426,7 +431,7 @@ main {
 
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 1fr;   /* все колонки равны самой широкой */
+    grid-auto-columns: fit-content;   /* все колонки равны самой широкой */
     width: max-content;
     align-items: start;   /* высота каждого li по своему контенту */
     gap: 24px;
