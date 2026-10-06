@@ -20,7 +20,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Jost", "Montserrat", sans-serif;
-    color: #fff;
+    /* color: #fff; */
 }
 
 html, body {
@@ -31,7 +31,7 @@ html, body {
 }
 
 img { display: block; max-width: 100%; }
-a { text-decoration: none; }
+a { color: inherit; text-decoration: none; }
 li { list-style: none; }
 
 .wrapper {
@@ -367,15 +367,22 @@ main {
     padding: 56px;
 }
 
+.Menu {
+    color: #000;
+}
+
 .Menu_Content {
     width: 100%;
     display: flex;
+    /* justify-content: center; */
+    align-items: center;
     flex-direction: column;
     gap: 1rem;
     font-size: 1.5rem;
 }
 
 .Menu_Navigation {
+    width: 100%;
     font-size: 1.25rem;
     display: flex;
     flex-direction: column;
@@ -404,23 +411,47 @@ main {
 }
 
 .Menu_Navigation_Icon svg {
-    /* width: 1.5em;
-    height: 1.5em; */
-    color: #e3e3e3;
     --stroke: 0;                                  /* 0 = как в оригинале */
-    /* stroke-width: clamp(0px, var(--stroke), 1.2px); */
     stroke-width: 0px;
 
 }
 
 .Menu_Content hr{
+    width: 100%;
     color: #CFCFCF;
 }
 
+.Menu_Socials{
+    --icon-height: 24px;           /* общая высота всех иконок */
 
-.Menu * {
-    color: #000;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;   /* все колонки равны самой широкой */
+    width: max-content;
+    align-items: start;   /* высота каждого li по своему контенту */
+    gap: 24px;
 }
+
+.Menu_Socials li{
+    text-align: center;
+}
+
+.Menu_Socials a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Menu_Socials svg{
+    color: #777;
+    height: var(--icon-height);
+    width: auto;                 /* ширина подстроится по пропорциям viewBox */
+    display: block;
+}
+
+
+
 
 .Menu.Active {
     transform: translateX(0);
