@@ -62,6 +62,7 @@ main{
 
 .Lore_Info p{
     font-size: clamp(1rem, .45vw + .9rem, 1.2rem);
+    hyphens: auto;
     text-align: justify;
     text-indent: 2rem;
 }
