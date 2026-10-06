@@ -307,7 +307,7 @@ main {
     position: sticky;
     z-index: 1001;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding:  1rem;
     /* Если вы вернете position: fixed, код ниже все равно будет работать идеально */
@@ -317,6 +317,18 @@ main {
     height: 60px;
     background-color: #ffffff;
 }
+
+.Logo{
+    z-index: 1001;
+    transform: scale(1);
+    transform-origin: top left;          /* от какой точки растёт */
+    transition: transform .4s ease;
+}
+
+.Mobile_Header:has(.Menu_Button.Active) .Logo{
+    transform: translate3d(calc(1 * (-200px - 1rem + 50vw)), 50px, 0px) scale(2)
+}
+
 
     .Mobile_Header::after {
     content: "";
@@ -364,7 +376,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 56px;
+    /* padding: 56px; */
 }
 
 .Menu {
@@ -372,7 +384,7 @@ main {
 }
 
 .Menu_Content {
-    width: 100%;
+    width: 400px;
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -404,10 +416,18 @@ main {
     background: #F9E59F;
 }
 
+.Menu_Navigation li.Menu_Navigation_Item_Active svg{
+    color: #000;
+}
+
+.Menu_Navigation li.Menu_Navigation_Item_Active .Devider{
+    background: #000000;
+}
+
 .Devider{
     height: 32px;
-    width: 1px;
-    background: #000;
+    width: 1.5px;
+    background: #9b9b9b;
 }
 
 .Menu_Navigation_Icon {
@@ -416,6 +436,7 @@ main {
 }
 
 .Menu_Navigation_Icon svg {
+    color: #9b9b9b;
     --stroke: 0;                                  /* 0 = как в оригинале */
     stroke-width: 0px;
 
