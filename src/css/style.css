@@ -322,11 +322,11 @@ main {
     z-index: 1001;
     transform: scale(1);
     transform-origin: top left;          /* от какой точки растёт */
-    transition: transform .4s ease;
+    transition: transform .3s ease;
 }
 
 .Mobile_Header:has(.Menu_Button.Active) .Logo{
-    transform: translate3d(calc(1 * (-200px - 1rem + 50vw)), 50px, 0px) scale(2)
+    transform: translate3d(calc(1 * (-200px - 1rem + 50vw)), 50px, 0px) scale(1.75)
 }
 
 
