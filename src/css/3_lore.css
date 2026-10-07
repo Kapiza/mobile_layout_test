@@ -253,7 +253,7 @@ main{
     }
 
     .Main_Content{
-        --fade: 24px;                      /* высота затуманенной зоны */
+        --fade: 1vh;                      /* высота затуманенной зоны */
         --mask-bottom: rgba(0, 0, 0, 0);   /* 0 = fade включён, 1 = выключен */
 
         -webkit-mask-image: linear-gradient(
