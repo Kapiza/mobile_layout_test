@@ -603,23 +603,24 @@ main {
         align-items: center;
         flex-direction: column;
 
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
     .Menu_Navigation {
         width: 100%;
 
-        font-size: 2.5rem;
+        font-size: 3rem;
         font-weight: 450;
 
         display: flex;
         flex-direction: column;
 
-        gap: 0.5rem;
+        gap: 1.5rem;
     }
 
     .Menu_Navigation li {
-        padding: 0.5rem;
+        /* height: 6.75rem; */
+        padding: 2rem;
 
         background: #F2F2F2;
     }
@@ -629,7 +630,7 @@ main {
 
         align-items: center;
 
-        gap: 1rem;
+        gap: 2rem;
     }
 
     .Menu_Navigation li.Menu_Navigation_Item_Active {
@@ -645,15 +646,15 @@ main {
     }
 
     .Devider {
-        height: 2rem;
-        width: 0.09375rem;
+        height: 4.625rem;
+        width: 0.1rem;
 
         background: #9b9b9b;
     }
 
     .Menu_Navigation_Icon {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 4.625rem;
+        height: 4.625rem;
     }
 
     .Menu_Navigation_Icon svg {
@@ -671,7 +672,7 @@ main {
     }
 
     .Menu_Socials {
-        --icon-height: 1.5rem;
+        --icon-height: 4.625rem;
 
         display: grid;
 
