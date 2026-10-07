@@ -499,12 +499,12 @@ main {
         transform: translate3d(
             calc(
                 1 * (
-                    -150px
+                    -25rem
                     - 1.5rem
                     + 50vw
                 )
             ),
-            50px,
+            10rem,
             0px
         ) scale(1.75);
     }
