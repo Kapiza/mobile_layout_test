@@ -49,7 +49,7 @@
   font-weight: 300;
   /* background-color: rgba(185, 185, 185, 0.562); */
   /* opacity: 0.75; */
-  backdrop-filter: blur(4px);
+  /* backdrop-filter: blur(4px); */
   border-radius: 100px;
   padding: 8px 50px 12px;
 }
