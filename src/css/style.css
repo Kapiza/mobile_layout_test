@@ -326,7 +326,7 @@ main {
 }
 
 .Mobile_Header:has(.Menu_Button.Active) .Logo{
-    transform: translate3d(calc(1 * (-200px - 1.5rem + 50vw)), 50px, 0px) scale(1.75)
+    transform: translate3d(calc(1 * (-150px - 1.5rem + 50vw)), 50px, 0px) scale(1.75)
 }
 
 
@@ -384,7 +384,7 @@ main {
 }
 
 .Menu_Content {
-    width: 400px;
+    width: 300px;
     display: flex;
     /* justify-content: center; */
     align-items: center;
