@@ -157,7 +157,7 @@ main {
 }
 
 .Sidebar:hover .Logo {
-    transform: scale(1.35);
+    transform: scale(1.25);
 }
 
 .Logo_Head {
@@ -506,7 +506,7 @@ main {
             ),
             10rem,
             0px
-        ) scale(1.75);
+        ) scale(1.5);
     }
 
     .Mobile_Header::after {
@@ -590,7 +590,7 @@ main {
         display: flex;
 
         justify-content: center;
-        align-items: center;
+        /* align-items: center; */
 
         color: #000;
     }
@@ -599,6 +599,7 @@ main {
         width: 50rem;
 
         display: flex;
+        margin-top: 30dvh;
 
         align-items: center;
         flex-direction: column;
