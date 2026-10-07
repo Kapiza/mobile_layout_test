@@ -5,39 +5,77 @@
     --sidebar-icon-size: 1.5rem;
     --sidebar-item-size: 2.5rem;
 
-    
     --socials-container-a-size-collapsed: 2.5rem;
 
     /* --socials-padding: 2rem; */
 
     --socials-padding: calc(
-    var(--sidebar-collapsed-width) / 2
-    - var(--socials-container-a-size-collapsed) / 2)
-    ;}
+        var(--sidebar-collapsed-width) / 2
+        - var(--socials-container-a-size-collapsed) / 2
+    );
+}
+
+
+/* =========================================================
+   КОРНЕВОЙ МАСШТАБ
+
+   Базовый дизайн:
+   1080 × 1920
+
+   При 1080 × 1920:
+   1rem = 16px
+
+   При 540 × 960:
+   1rem = 8px
+
+   При 390 × 844:
+   1rem ≈ 5.78px
+
+   Масштаб задаётся непосредственно корневому
+   html и поэтому распространяется на все rem.
+   ========================================================= */
+
+html {
+    font-size: min(
+        1.48148vw,
+        0.83333dvh
+    );
+}
+
+body {
+    width: 100%;
+    min-height: 100dvh;
+    background: #090909;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Jost", "Montserrat", sans-serif;
+
     /* color: #fff; */
 }
 
-html, body {
-    width: 100%;
-    min-height: 100dvh;
-    font-size: 16px;
-    background: #090909;
+img {
+    display: block;
+    max-width: 100%;
 }
 
-img { display: block; max-width: 100%; }
-a { color: inherit; text-decoration: none; }
-li { list-style: none; }
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
 
 .wrapper {
     display: flex;
     min-height: 100%;
     width: 100%;
+
     /* background: url("a107a421-5413-4abe-bed0-4439080d5464.png") center/cover no-repeat; */
 }
 
@@ -50,7 +88,6 @@ main {
 
 .Main_Content_Wrapper {
     height: 100%;
-
 }
 
 .Main_Content {
@@ -58,19 +95,37 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: clamp(24px, 4vw, 64px);
+
+    padding: clamp(
+        24px,
+        4vw,
+        64px
+    );
 }
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
 
 .Sidebar {
     position: relative;
+
     width: var(--sidebar-collapsed-width);
     flex: 0 0 var(--sidebar-collapsed-width);
+
     min-height: 100dvh;
+
     background: #000;
+
     display: flex;
     flex-direction: column;
+
     overflow: hidden;
-    transition: width .5s ease, flex-basis .5s ease;
+
+    transition:
+        width .5s ease,
+        flex-basis .5s ease;
 }
 
 .Sidebar:hover {
@@ -80,19 +135,24 @@ main {
 
 .Logo_Wrapper {
     margin-top: 1.25rem;
-    padding:  0 1rem;
+    padding: 0 1rem;
+
     display: flex;
     justify-content: center;
     flex-direction: column;
+
     width: max-content;
 }
 
 .Logo {
     gap: .25rem;
+
     display: flex;
     flex-direction: column;
+
     transform: scale(1);
     transform-origin: left top;
+
     transition: transform .3s ease;
 }
 
@@ -105,46 +165,61 @@ main {
     letter-spacing: .25rem;
     font-weight: 400;
     line-height: 1;
+
     /* text-wrap: wrap; */
 }
 
 .Logo_Bot {
     width: fit-content;
+
     font-size: 1rem;
     letter-spacing: .2rem;
+
     color: #c4c4c4;
 }
 
-/* .Gapper{
-    display: flex;
 
+/* .Gapper {
+    display: flex;
 } */
 
 .Navigation {
     margin-top: 2.5rem;
+
     display: flex;
     flex-direction: column;
 }
 
 .Sidebar_Item {
     position: relative;
+
     width: 100%;
     height: var(--sidebar-item-size);
+
     display: block;
 }
 
 .Sidebar_Icon {
     position: absolute;
-    left: calc(var(--sidebar-collapsed-width) / 2);
+
+    left: calc(
+        var(--sidebar-collapsed-width) / 2
+    );
+
     top: 50%;
+
     width: var(--sidebar-icon-size);
     height: var(--sidebar-icon-size);
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     transform: translate(-50%, -50%);
+
     transition: none;
 }
+
 
 /* .Sidebar:hover .Sidebar_Icon {
     left: calc(var(--sidebar-collapsed-width) / 2);
@@ -153,63 +228,98 @@ main {
 
 .Sidebar_Label {
     position: absolute;
-    left: calc(var(--sidebar-collapsed-width) / 2 + 2.5rem);
+
+    left: calc(
+        var(--sidebar-collapsed-width) / 2 + 2.5rem
+    );
+
     top: 50%;
+
     transform: translateY(-50%);
+
     white-space: nowrap;
+
     opacity: 0;
+
     transform-origin: left center;
-    transition: opacity .2s ease, transform .2s ease;
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease;
 }
 
 .Sidebar:hover .Sidebar_Label {
     opacity: 1;
+
     transform: translateY(-50%);
 }
 
 .Navigation li:hover {
-    background: linear-gradient(to left, #0b0b0b, #222, #444);
+    background: linear-gradient(
+        to left,
+        #0b0b0b,
+        #222,
+        #444
+    );
 }
 
 .Navigation li.active::after {
     content: "";
+
     position: absolute;
+
     left: 0;
     top: 0;
+
     width: 3px;
     height: 100%;
+
     background: #fff;
 }
 
 .Socials {
     margin-top: 1.5rem;
+
     display: flex;
     flex-direction: column;
+
     gap: 8px;
+
     /* padding: var(--socials-padding); */
 }
 
-
-.Socials .Sidebar_Item{
+.Socials .Sidebar_Item {
     height: auto;
     width: auto;
+
     padding: 0 var(--socials-padding);
-    /* padding: var(--socials-padding);
 
+    /*
+    padding: var(--socials-padding);
     display: flex;
-    justify-content: center; */
-    /* position: static; */
-    /* width: 2rem; */
-    /* height: 5.5rem; */
+    justify-content: center;
+    */
 
+    /*
+    position: static;
+    width: 2rem;
+    height: 5.5rem;
+    */
 }
 
 .Socials .Sidebar_Icon {
+    /*
+    left: calc(
+        var(--sidebar-collapsed-width) / 2
+        - var(--socials-padding)
+    );
+    */
 
-    /* left: calc(var(--sidebar-collapsed-width) / 2 - var(--socials-padding)); */
     position: absolute;
-    left: calc(var(--sidebar-collapsed-width) / 2);
 
+    left: calc(
+        var(--sidebar-collapsed-width) / 2
+    );
 
     transform: translate(-50%, -50%);
 }
@@ -217,30 +327,46 @@ main {
 .Socials li a {
     width: var(--socials-container-a-size-collapsed);
     height: var(--socials-container-a-size-collapsed);
-    /* aspect-ratio: 1; */
-    /* width: 5rem;
-    height: 5rem; */
+
+    /*
+    aspect-ratio: 1;
+
+    width: 5rem;
+    height: 5rem;
+    */
+
     display: flex;
     align-items: center;
+
     gap: 1rem;
+
     /* padding: 0.75rem 1rem; */
+
     border: 1px solid #3a3a3a;
+
     background: #0B0B09;
 
-    transition: width 0.35s ease, width 0.35s ease;
+    transition:
+        width 0.35s ease,
+        width 0.35s ease;
 }
 
 .Sidebar:hover .Socials li a {
     width: 100%;
+
     /* height: var(--socials-container-a-size-collapsed); */
 }
 
 .Sidebar_Footer {
     position: relative;
+
     width: 100%;
+
     margin-top: auto;
     margin-bottom: 2rem;
+
     height: 5.5rem;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -248,13 +374,23 @@ main {
 
 .Sidebar_Footer .Sidebar_Icon {
     position: absolute;
-    left: calc(var(--sidebar-collapsed-width) / 2);
+
+    left: calc(
+        var(--sidebar-collapsed-width) / 2
+    );
+
     top: 50%;
+
     width: var(--sidebar-icon-size);
     height: var(--sidebar-icon-size);
+
     transform: translate(-50%, -50%);
+
     opacity: 1;
-    transition: opacity .3s ease, opacity .3s ease;
+
+    transition:
+        opacity .3s ease,
+        opacity .3s ease;
 }
 
 .Sidebar:hover .Sidebar_Footer .Sidebar_Icon {
@@ -264,224 +400,312 @@ main {
 
 .Sidebar_Footer .Sidebar_Label_Footer {
     position: absolute;
-    left: calc(var(--sidebar-collapsed-width));
+
+    left: var(--sidebar-collapsed-width);
     top: 50%;
+
     width: max-content;
+
     transform: translate(-50%, -50%);
+
     text-align: left;
     white-space: normal;
+
     font-size: .8rem;
     color: #8b8b8b;
     line-height: 1.3;
+
     opacity: 0;
-    transition: opacity .3s ease, opacity .3s ease;
+
+    transition:
+        opacity .3s ease,
+        opacity .3s ease;
 }
 
 .Sidebar:hover .Sidebar_Footer .Sidebar_Label_Footer {
     opacity: 1;
 }
 
+
+/* =========================================================
+   900px
+   ========================================================= */
+
 @media (max-width: 900px) {
-    /* .Sidebar {
+
+    /*
+    .Sidebar {
         width: 88px;
         flex-basis: 88px;
     }
 
     .Sidebar:hover {
         width: 88px;
-    } */
+    }
+    */
+
 }
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 700px) {
 
-.wrapper {
-    flex-direction: column;
-}
-
-    .Sidebar {
-    display: none;
-}
-
-.Mobile_Header {
-    /* padding: 1rem; */
-    position: sticky;
-    z-index: 1001;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:  1.5rem;
-    /* Если вы вернете position: fixed, код ниже все равно будет работать идеально */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    background-color: #ffffff;
-}
-
-.Logo{
-    z-index: 1001;
-    transform: scale(1);
-    transform-origin: top left;          /* от какой точки растёт */
-    transition: transform .3s ease;
-}
-
-.Mobile_Header:has(.Menu_Button.Active) .Logo{
-    transform: translate3d(calc(1 * (-150px - 1.5rem + 50vw)), 50px, 0px) scale(1.75)
-}
-
-
-    .Mobile_Header::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 100%;                   /* прижат к низу элемента */
-    height: 4px;                /* любая высота */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), transparent);
-    pointer-events: none;        /* не мешает кликам и скроллу */
+    .wrapper {
+        flex-direction: column;
     }
 
-.Menu_Button {
-    z-index: 1001;
-    width: 40px;
-    height: 40px;
-    /* background-color: #4e6d9c; */
-    border: none;
-    cursor: pointer;
-}
-
-.Menu_Button svg {
-    width: 100%;
-    height: 100%;
-    fill: #000000;
-}
-
-.Menu_Button .icon_close{ display: none; }
-
-.Menu_Button.Active .icon_open{ display: none; }
-.Menu_Button.Active .icon_close{ display: block; }
-
-.Menu {
-    position: absolute;
-    top: 0;        /* ВАЖНО: прижимаем к самому верху */
-    left: 0;       /* ВАЖНО: прижимаем к левому краю */
-    width: 100vw;
-    height: 100dvh;
-    background-color: #fff;
-    
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 1000;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* padding: 56px; */
-}
-
-.Menu {
-    color: #000;
-}
-
-.Menu_Content {
-    width: 300px;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    flex-direction: column;
-    gap: 1rem;
-    font-size: 1.5rem;
-}
-
-.Menu_Navigation {
-    width: 100%;
-    font-size: 1.25rem;
-    font-weight: 450;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-.Menu_Navigation li{
-    padding: 8px;
-    background: #F2F2F2;
-}
-
-.Menu_Navigation_Item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.Menu_Navigation li.Menu_Navigation_Item_Active{
-    background: #F9E59F;
-}
-
-.Menu_Navigation li.Menu_Navigation_Item_Active svg{
-    color: #000;
-}
-
-.Menu_Navigation li.Menu_Navigation_Item_Active .Devider{
-    background: #000000;
-}
-
-.Devider{
-    height: 32px;
-    width: 1.5px;
-    background: #9b9b9b;
-}
-
-.Menu_Navigation_Icon {
-    width: 40px;
-    height: 40px;
-}
-
-.Menu_Navigation_Icon svg {
-    color: #9b9b9b;
-    --stroke: 0;                                  /* 0 = как в оригинале */
-    stroke-width: 0px;
-
-}
-
-.Menu_Content hr{
-    width: 100%;
-    color: #CFCFCF;
-}
-
-.Menu_Socials{
-    --icon-height: 24px;           /* общая высота всех иконок */
-
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: fit-content;   /* все колонки равны самой широкой */
-    width: max-content;
-    align-items: start;   /* высота каждого li по своему контенту */
-    gap: 24px;
-}
-
-.Menu_Socials li{
-    text-align: center;
-}
-
-.Menu_Socials a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    .Sidebar {
+        display: none;
+    }
 
 
-.Menu_Socials svg{
-    color: #777;
-    height: var(--icon-height);
-    width: auto;                 /* ширина подстроится по пропорциям viewBox */
-    display: block;
-}
+    /* =====================================================
+       MOBILE HEADER
+       ===================================================== */
+
+    .Mobile_Header {
+        position: sticky;
+
+        z-index: 1001;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 1.5rem;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 80px;
+
+        background-color: #ffffff;
+    }
+
+    .Logo {
+        z-index: 1001;
+
+        transform: scale(1);
+        transform-origin: top left;
+
+        transition: transform .3s ease;
+    }
+
+    .Mobile_Header:has(.Menu_Button.Active) .Logo {
+        transform: translate3d(
+            calc(
+                1 * (
+                    -150px
+                    - 1.5rem
+                    + 50vw
+                )
+            ),
+            50px,
+            0px
+        ) scale(1.75);
+    }
+
+    .Mobile_Header::after {
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+        right: 0;
+        top: 100%;
+
+        height: 4px;
+
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.25),
+            transparent
+        );
+
+        pointer-events: none;
+    }
+
+    .Menu_Button {
+        z-index: 1001;
+
+        width: 40px;
+        height: 40px;
+
+        border: none;
+
+        cursor: pointer;
+    }
+
+    .Menu_Button svg {
+        width: 100%;
+        height: 100%;
+
+        fill: #000000;
+    }
+
+    .Menu_Button .icon_close {
+        display: none;
+    }
+
+    .Menu_Button.Active .icon_open {
+        display: none;
+    }
+
+    .Menu_Button.Active .icon_close {
+        display: block;
+    }
 
 
+    /* =====================================================
+       ВЫЕЗЖАЮЩЕЕ МЕНЮ
 
+       Все размеры через rem.
 
-.Menu.Active {
-    transform: translateX(0);
-}
+       rem берётся непосредственно от html,
+       который масштабируется в самом корне файла.
+       ===================================================== */
 
+    .Menu {
+        position: absolute;
 
+        top: 0;
+        left: 0;
+
+        width: 100vw;
+        height: 100dvh;
+
+        background-color: #fff;
+
+        transform: translateX(-100%);
+
+        transition:
+            transform 0.3s ease-in-out;
+
+        z-index: 1000;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        color: #000;
+    }
+
+    .Menu_Content {
+        width: 50rem;
+
+        display: flex;
+
+        align-items: center;
+        flex-direction: column;
+
+        gap: 1rem;
+    }
+
+    .Menu_Navigation {
+        width: 100%;
+
+        font-size: 2.5rem;
+        font-weight: 450;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 0.5rem;
+    }
+
+    .Menu_Navigation li {
+        padding: 0.5rem;
+
+        background: #F2F2F2;
+    }
+
+    .Menu_Navigation_Item {
+        display: flex;
+
+        align-items: center;
+
+        gap: 1rem;
+    }
+
+    .Menu_Navigation li.Menu_Navigation_Item_Active {
+        background: #F9E59F;
+    }
+
+    .Menu_Navigation li.Menu_Navigation_Item_Active svg {
+        color: #000;
+    }
+
+    .Menu_Navigation li.Menu_Navigation_Item_Active .Devider {
+        background: #000000;
+    }
+
+    .Devider {
+        height: 2rem;
+        width: 0.09375rem;
+
+        background: #9b9b9b;
+    }
+
+    .Menu_Navigation_Icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .Menu_Navigation_Icon svg {
+        color: #9b9b9b;
+
+        --stroke: 0;
+
+        stroke-width: 0px;
+    }
+
+    .Menu_Content hr {
+        width: 100%;
+
+        color: #CFCFCF;
+    }
+
+    .Menu_Socials {
+        --icon-height: 1.5rem;
+
+        display: grid;
+
+        grid-auto-flow: column;
+        grid-auto-columns: fit-content;
+
+        width: max-content;
+
+        align-items: start;
+
+        gap: 1.5rem;
+    }
+
+    .Menu_Socials li {
+        text-align: center;
+    }
+
+    .Menu_Socials a {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Menu_Socials svg {
+        color: #777;
+
+        height: var(--icon-height);
+        width: auto;
+
+        display: block;
+    }
+
+    .Menu.Active {
+        transform: translateX(0);
+    }
 }
