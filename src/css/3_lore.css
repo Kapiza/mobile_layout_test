@@ -268,10 +268,10 @@ main{
         );
     }
 
-    .Lore_Info h1{ font-size: 2.75rem; white-space: normal; overflow-wrap: break-word; text-align: center; }
-    .Lore_Info p{ font-size: 1.375rem; line-height: 1.125; text-indent: 1rem; }
+    .Lore_Info h1{ font-size: 5.75rem; white-space: normal; overflow-wrap: break-word; text-align: center; }
+    .Lore_Info p{ font-size: 3.375rem; line-height: 1.125; text-indent: 1rem; }
 
-    .Мир_Прекрасной_Эпохи h1{ font-size: 1.75rem;  }
+    .Мир_Прекрасной_Эпохи h1{ font-size: 5.75rem;  }
     .Мир_Прекрасной_Эпохи h1 .first-word{ font-size: 2.75rem;  }
 
 
