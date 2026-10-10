@@ -654,8 +654,8 @@ main {
     }
 
     .Menu_Navigation_Icon {
-        width: 4rem;
-        height: 4rem;
+        width: 4.625rem;
+        height: 4.625rem;
     }
 
     .Menu_Navigation_Icon svg {
@@ -666,14 +666,22 @@ main {
         stroke-width: 0px;
     }
 
+
+    .Menu_Content hr {
+        width: 100%;
+
+        color: #CFCFCF;
+    }
     .Menu_Content hr {
         width: 100%;
 
         color: #CFCFCF;
     }
 
+
     .Menu_Socials {
-        --icon-height: 4.625rem;
+        --icon-height: 4rem;
+
 
         display: grid;
 
@@ -684,7 +692,7 @@ main {
 
         align-items: start;
 
-        gap: 1.5rem;
+        gap: 2.5rem;
     }
 
     .Menu_Socials li {
