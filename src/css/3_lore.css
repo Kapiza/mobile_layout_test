@@ -145,6 +145,7 @@ main{
 
     .Lore_Info_Description{
         height: 67.5%;
+        padding: 2.5rem;
     }
 
     /* .scroll_box{
@@ -200,39 +201,43 @@ main{
 
 /* small laptop */
 @media (max-width: 1200px){
-    .Main_Content{ gap: .5rem; padding: .5rem; }
+    /* .Main_Content{ gap: .5rem; padding: .5rem; }
     .Lore_Images{ width: min(38vw, 520px); }
     .Lore_Info h1{ font-size: 2.8rem; }
-    .Lore_Info p{ font-size: 1rem; line-height: 1.65; }
+    .Lore_Info p{ font-size: 1rem; line-height: 1.65; } */
     /* .Entertainment_Description p{font-size: 0.8rem; } */
 }
 
 /* tablet */
 @media (max-width: 900px){
-    .Main_Content{ gap: 0rem; padding: 2rem; }
+    /* .Main_Content{ gap: 0rem; padding: 2rem; }
     .Lore_Images{ width: min(80vw, 520px); }
-    .Lore_Info{ max-width: none; }
+    .Lore_Info{ max-width: none; } */
 }
 
 /* phone */
 @media (max-width: 600px){
-    .Main_Content{ padding: 1.5rem 1.25rem; gap: 2rem; }
+    /* .Main_Content{ padding: 1.5rem 1.25rem; gap: 2rem; }
     .Lore_Images{ width: min(92vw, 430px); }
     .Lore_Info h1{ font-size: 2.3rem; }
-    .Lore_Info p{ font-size: .95rem; line-height: 1.6; text-indent: 1.2rem; }
+    .Lore_Info p{ font-size: .95rem; line-height: 1.6; text-indent: 1.2rem; } */
 }
 
 /* small phone */
 @media (max-width: 480px){
-    .Main_Content{ padding: 1rem; gap: 1.5rem; }
-    .Lore_Images{ width: 100%; max-width: 340px; }
-    .Lore_Info h1{ font-size: 2rem; }
-    .Lore_Info p{ font-size: .9rem; line-height: 1.55; text-indent: 1rem; }
+    /* .Main_Content{ padding: 1rem; gap: 1.5rem; } */
+    /* .Lore_Images{ width: 100%; max-width: 340px; } */
+    /* .Lore_Info h1{ font-size: 2rem; } */
+    /* .Lore_Info p{ font-size: .9rem; line-height: 1.55; text-indent: 1rem; } */
 }
 
 /* BREAKPOINT */
 /* screen width < 500px - mobile layout */
 @media (max-width: 700px) {
+
+    .Main_Content{
+        padding: 0;
+    }
 
     html{
         overflow: hidden;
@@ -271,8 +276,11 @@ main{
     .Lore_Info h1{ font-size: 5.75rem; white-space: normal; overflow-wrap: break-word; text-align: center; }
     .Lore_Info p{ font-size: 3.375rem; line-height: 1.125; text-indent: 1rem; }
 
-    .Мир_Прекрасной_Эпохи h1{ font-size: 5.75rem;  }
-    .Мир_Прекрасной_Эпохи h1 .first-word{ font-size: 2.75rem;  }
+    .Мир_Прекрасной_Эпохи h1{ 
+        font-size: 5.75rem; 
+        /* white-space: pre-line; */
+     }
+    /* .Мир_Прекрасной_Эпохи h1 .first-word{ font-size: 5.75rem;  } */
 
 
 

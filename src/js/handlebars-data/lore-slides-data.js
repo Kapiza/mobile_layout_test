@@ -5,7 +5,7 @@
 const lore_slides = [
   // 1. Мир "Прекрасной эпохи"
   {
-    title: 'Мир\n"Прекрасной\u00A0эпохи"',
+    title: 'Мир "Прекрасной\u00A0эпохи"',
     cls: 'Мир_Прекрасной_Эпохи',
     image: 'lore_img_1.png',
     paragraphs: [
