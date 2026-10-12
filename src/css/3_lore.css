@@ -145,7 +145,7 @@ main{
 
     .Lore_Info_Description{
         height: 67.5%;
-        padding: 2.5rem;
+        padding: 0 2.5rem;
     }
 
     /* .scroll_box{
@@ -273,11 +273,17 @@ main{
         );
     }
 
-    .Lore_Info h1{ font-size: 5.75rem; white-space: normal; overflow-wrap: break-word; text-align: center; }
+    .Lore_Info h1{ 
+        font-size: 5.75rem; 
+        white-space: normal; 
+        overflow-wrap: break-word; 
+        text-align: center; 
+        white-space: pre-line;
+    }
     .Lore_Info p{ font-size: 3.375rem; line-height: 1.125; text-indent: 5rem; }
 
     .Мир_Прекрасной_Эпохи h1{ 
-        font-size: 5.75rem; 
+        /* font-size: 5.75rem;  */
         /* white-space: pre-line; */
      }
     /* .Мир_Прекрасной_Эпохи h1 .first-word{ font-size: 5.75rem;  } */
