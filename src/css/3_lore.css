@@ -253,7 +253,7 @@ main{
 
     .Main_Content {
         /* padding-bottom: 128px; */
-        height: 85%;
+        height: 90%;
         overflow-y: scroll;
         scrollbar-width: none;  
     }
