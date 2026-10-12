@@ -269,8 +269,8 @@ main{
         );
         mask-image: linear-gradient(
             to bottom,
-            #000 calc(100% - var(--fade)),
-            var(--mask-bottom) 100%
+            #000 calc(95% - var(--fade)),
+            var(--mask-bottom) 95%
         );
     }
 
