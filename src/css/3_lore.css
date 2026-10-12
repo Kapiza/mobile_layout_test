@@ -264,8 +264,8 @@ main{
 
         -webkit-mask-image: linear-gradient(
             to bottom,
-            #000 calc(100% - var(--fade)),
-            var(--mask-bottom) 100%
+            #000 calc(97% - var(--fade)),
+            var(--mask-bottom) 97%
         );
         mask-image: linear-gradient(
             to bottom,
