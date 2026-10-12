@@ -604,7 +604,7 @@ main {
         align-items: center;
         flex-direction: column;
 
-        gap: 1.5rem;
+        gap: 3.5rem;
     }
 
     .Menu_Navigation {
@@ -678,6 +678,15 @@ main {
         color: #CFCFCF;
     }
 
+    .Menu_Socials_and_Devider{
+        width: 100%;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 1rem;
+        /* justify-content: center; */
+        /* text-align: center; */
+    }
 
     .Menu_Socials {
         --icon-height: 4rem;
@@ -714,6 +723,8 @@ main {
 
         display: block;
     }
+
+
 
     .Menu.Active {
         transform: translateX(0);
