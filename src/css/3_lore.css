@@ -259,7 +259,7 @@ main{
     }
 
     .Main_Content{
-        --fade: 8rem;                      /* высота затуманенной зоны */
+        --fade: 6rem;                      /* высота затуманенной зоны */
         --mask-bottom: rgba(0, 0, 0, 0);   /* 0 = fade включён, 1 = выключен */
 
         -webkit-mask-image: linear-gradient(
@@ -269,8 +269,8 @@ main{
         );
         mask-image: linear-gradient(
             to bottom,
-            #000 calc(95% - var(--fade)),
-            var(--mask-bottom) 95%
+            #000 calc(97% - var(--fade)),
+            var(--mask-bottom) 97%
         );
     }
 
