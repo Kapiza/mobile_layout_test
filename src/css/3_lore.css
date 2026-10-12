@@ -43,7 +43,8 @@ main{
 .Lore_Info{
     display: flex;
     flex-direction: column;
-    gap: clamp(16px, 2vw, 24px);
+    /* gap: clamp(16px, 2vw, 24px); */
+    gap: 2.5rem;
     max-width: 720px;
     min-height: 0;
     max-height: 100%;
