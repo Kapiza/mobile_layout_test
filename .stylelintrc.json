@@ -1,0 +1,7 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "selector-max-type": 0,
+    "selector-max-id": 0
+  }
+}

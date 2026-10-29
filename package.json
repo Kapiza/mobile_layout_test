@@ -20,5 +20,9 @@
   "dependencies": {
     "embla-carousel": "^8.6.0",
     "handlebars": "^4.7.9"
+  },
+  "devDependencies": {
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard": "^40.0.0"
   }
 }
