@@ -1,4 +1,4 @@
-const logoWidth = document.querySelector('.Logo_Wrapper').offsetWidth;
+const logoWidth = document.querySelector('.logo-wrapper').offsetWidth;
 
 document.documentElement.style.setProperty(
   '--sidebar-collapsed-width',

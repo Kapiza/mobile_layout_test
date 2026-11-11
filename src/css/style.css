@@ -1,20 +1,15 @@
 ﻿:root {
     --sidebar-collapsed-width: 110px;
     --sidebar-expanded-width: 260px;
-
     --sidebar-icon-size: 1.5rem;
     --sidebar-item-size: 2.5rem;
-
     --socials-container-a-size-collapsed: 2.5rem;
-
     /* --socials-padding: 2rem; */
-
     --socials-padding: calc(
         var(--sidebar-collapsed-width) / 2
         - var(--socials-container-a-size-collapsed) / 2
     );
 }
-
 
 /* =========================================================
    КОРНЕВОЙ МАСШТАБ
@@ -35,39 +30,37 @@
    html и поэтому распространяется на все rem.
    ========================================================= */
 
-html {
+.page-root {
     font-size: min(
         1.48148vw,
         0.83333dvh
     );
 }
 
-body {
+.page-body {
     width: 100%;
     min-height: 100dvh;
     background: #090909;
 }
 
-* {
+.global-reset {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Jost", "Montserrat", sans-serif;
-
-    /* color: #fff; */
 }
 
-img {
+.global-img {
     display: block;
     max-width: 100%;
 }
 
-a {
+.global-link {
     color: inherit;
     text-decoration: none;
 }
 
-li {
+.global-list-item {
     list-style: none;
 }
 
@@ -75,27 +68,24 @@ li {
     display: flex;
     min-height: 100%;
     width: 100%;
-
-    /* background: url("a107a421-5413-4abe-bed0-4439080d5464.png") center/cover no-repeat; */
 }
 
-main {
+.main-content {
     flex: 1;
     min-width: 0;
     display: flex;
     flex-direction: column;
 }
 
-.Main_Content_Wrapper {
+.main-content-wrapper {
     height: 100%;
 }
 
-.Main_Content {
+.main-content-inner {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: clamp(
         24px,
         4vw,
@@ -103,158 +93,114 @@ main {
     );
 }
 
-
 /* =========================================================
    SIDEBAR
    ========================================================= */
 
-.Sidebar {
+.sidebar {
     position: relative;
-
     width: var(--sidebar-collapsed-width);
     flex: 0 0 var(--sidebar-collapsed-width);
-
     min-height: 100dvh;
-
     background: #000;
-
     display: flex;
     flex-direction: column;
-
     overflow: hidden;
-
     transition:
         width .5s ease,
         flex-basis .5s ease;
 }
 
-.Sidebar:hover {
+.sidebar:hover {
     width: var(--sidebar-expanded-width);
     flex-basis: var(--sidebar-expanded-width);
 }
 
-.Logo_Wrapper {
+.logo-wrapper {
     margin-top: 1.25rem;
     padding: 0 1rem;
-
     display: flex;
     justify-content: center;
     flex-direction: column;
-
     width: max-content;
 }
 
-.Logo {
+.logo {
     gap: .25rem;
-
     display: flex;
     flex-direction: column;
-
     transform: scale(1);
     transform-origin: left top;
-
     transition: transform .3s ease;
 }
 
-.Sidebar:hover .Logo {
+.sidebar:hover .logo {
     transform: scale(1.25);
 }
 
-.Logo_Head {
+.logo-head {
     font-size: 1.25rem;
     letter-spacing: .25rem;
     font-weight: 400;
     line-height: 1;
-
-    /* text-wrap: wrap; */
 }
 
-.Logo_Bot {
+.logo-bot {
     width: fit-content;
-
     font-size: 1rem;
     letter-spacing: .2rem;
-
     color: #c4c4c4;
 }
 
-
-/* .Gapper {
-    display: flex;
-} */
-
-.Navigation {
+.navigation {
     margin-top: 2.5rem;
-
     display: flex;
     flex-direction: column;
 }
 
-.Sidebar_Item {
+.sidebar-item {
     position: relative;
-
     width: 100%;
     height: var(--sidebar-item-size);
-
     display: block;
 }
 
-.Sidebar_Icon {
+.sidebar-icon {
     position: absolute;
-
     left: calc(
         var(--sidebar-collapsed-width) / 2
     );
-
     top: 50%;
-
     width: var(--sidebar-icon-size);
     height: var(--sidebar-icon-size);
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     transform: translate(-50%, -50%);
-
     transition: none;
 }
 
-
-/* .Sidebar:hover .Sidebar_Icon {
-    left: calc(var(--sidebar-collapsed-width) / 2);
-    transform: translate(-50%, -50%);
-} */
-
-.Sidebar_Label {
+.sidebar-label {
     position: absolute;
-
     left: calc(
         var(--sidebar-collapsed-width) / 2 + 2.5rem
     );
-
     top: 50%;
-
     transform: translateY(-50%);
-
     white-space: nowrap;
-
     opacity: 0;
-
     transform-origin: left center;
-
     transition:
         opacity .2s ease,
         transform .2s ease;
 }
 
-.Sidebar:hover .Sidebar_Label {
+.sidebar:hover .sidebar-label {
     opacity: 1;
-
     transform: translateY(-50%);
 }
 
-.Navigation li:hover {
+.navigation li:hover {
     background: linear-gradient(
         to left,
         #0b0b0b,
@@ -263,239 +209,151 @@ main {
     );
 }
 
-.Navigation li.active::after {
+.navigation li.active::after {
     content: "";
-
     position: absolute;
-
     left: 0;
     top: 0;
-
     width: 3px;
     height: 100%;
-
     background: #fff;
 }
 
-.Socials {
+.socials {
     margin-top: 1.5rem;
-
     display: flex;
     flex-direction: column;
-
     gap: 8px;
-
-    /* padding: var(--socials-padding); */
 }
 
-.Socials .Sidebar_Item {
+.socials .sidebar-item {
     height: auto;
     width: auto;
-
     padding: 0 var(--socials-padding);
-
-    /*
-    padding: var(--socials-padding);
-    display: flex;
-    justify-content: center;
-    */
-
-    /*
-    position: static;
-    width: 2rem;
-    height: 5.5rem;
-    */
 }
 
-.Socials .Sidebar_Icon {
-    /*
-    left: calc(
-        var(--sidebar-collapsed-width) / 2
-        - var(--socials-padding)
-    );
-    */
-
+.socials .sidebar-icon {
     position: absolute;
-
     left: calc(
         var(--sidebar-collapsed-width) / 2
     );
-
     transform: translate(-50%, -50%);
 }
 
-.Socials li a {
+.socials li a {
     width: var(--socials-container-a-size-collapsed);
     height: var(--socials-container-a-size-collapsed);
-
-    /*
-    aspect-ratio: 1;
-
-    width: 5rem;
-    height: 5rem;
-    */
-
     display: flex;
     align-items: center;
-
     gap: 1rem;
-
-    /* padding: 0.75rem 1rem; */
-
     border: 1px solid #3a3a3a;
-
     background: #0B0B09;
-
     transition:
         width 0.35s ease,
         width 0.35s ease;
 }
 
-.Sidebar:hover .Socials li a {
+.sidebar:hover .socials li a {
     width: 100%;
-
-    /* height: var(--socials-container-a-size-collapsed); */
 }
 
-.Sidebar_Footer {
+.sidebar-footer {
     position: relative;
-
     width: 100%;
-
     margin-top: auto;
     margin-bottom: 2rem;
-
     height: 5.5rem;
-
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.Sidebar_Footer .Sidebar_Icon {
+.sidebar-footer .sidebar-icon {
     position: absolute;
-
     left: calc(
         var(--sidebar-collapsed-width) / 2
     );
-
     top: 50%;
-
     width: var(--sidebar-icon-size);
     height: var(--sidebar-icon-size);
-
     transform: translate(-50%, -50%);
-
     opacity: 1;
-
     transition:
         opacity .3s ease,
         opacity .3s ease;
 }
 
-.Sidebar:hover .Sidebar_Footer .Sidebar_Icon {
+.sidebar:hover .sidebar-footer .sidebar-icon {
     opacity: 0;
     pointer-events: none;
 }
 
-.Sidebar_Footer .Sidebar_Label_Footer {
+.sidebar-footer .sidebar-label-footer {
     position: absolute;
-
     left: var(--sidebar-collapsed-width);
     top: 50%;
-
     width: max-content;
-
     transform: translate(-50%, -50%);
-
     text-align: left;
     white-space: normal;
-
     font-size: .8rem;
     color: #8b8b8b;
     line-height: 1.3;
-
     opacity: 0;
-
     transition:
         opacity .3s ease,
         opacity .3s ease;
 }
 
-.Sidebar:hover .Sidebar_Footer .Sidebar_Label_Footer {
+.sidebar:hover .sidebar-footer .sidebar-label-footer {
     opacity: 1;
 }
-
 
 /* =========================================================
    900px
    ========================================================= */
 
 @media (max-width: 900px) {
-
-    /*
-    .Sidebar {
-        width: 88px;
-        flex-basis: 88px;
-    }
-
-    .Sidebar:hover {
-        width: 88px;
-    }
-    */
-
 }
-
 
 /* =========================================================
    MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
-
     .wrapper {
         flex-direction: column;
     }
 
-    .Sidebar {
+    .sidebar {
         display: none;
     }
-
 
     /* =====================================================
        MOBILE HEADER
        ===================================================== */
-
-    .Mobile_Header {
+    .mobile-header {
         position: sticky;
-
         z-index: 1001;
-
         display: flex;
         justify-content: space-between;
         align-items: center;
-
         padding: 1.5rem;
-
         top: 0;
         left: 0;
-
         width: 100%;
         height: 80px;
-
         background-color: #ffffff;
     }
 
-    .Logo {
+    .logo {
         z-index: 1001;
-
         transform: scale(1);
         transform-origin: top left;
-
         transition: transform .3s ease;
     }
 
-    .Mobile_Header:has(.Menu_Button.Active) .Logo {
+    .mobile-header:has(.menu-button.active) .logo {
         transform: translate3d(
             calc(
                 1 * (
@@ -509,224 +367,166 @@ main {
         ) scale(1.5);
     }
 
-    .Mobile_Header::after {
+    .mobile-header::after {
         content: "";
-
         position: absolute;
-
         left: 0;
         right: 0;
         top: 100%;
-
         height: 4px;
-
         background: linear-gradient(
             to bottom,
             rgba(0, 0, 0, 0.25),
             transparent
         );
-
         pointer-events: none;
     }
 
-    .Menu_Button {
+    .menu-button {
         z-index: 1001;
-
         width: 40px;
         height: 40px;
-
         border: none;
-
         cursor: pointer;
     }
 
-    .Menu_Button svg {
+    .menu-button svg {
         width: 100%;
         height: 100%;
-
         fill: #000000;
     }
 
-    .Menu_Button .icon_close {
+    .menu-button .icon-close {
         display: none;
     }
 
-    .Menu_Button.Active .icon_open {
+    .menu-button.active .icon-open {
         display: none;
     }
 
-    .Menu_Button.Active .icon_close {
+    .menu-button.active .icon-close {
         display: block;
     }
 
-
     /* =====================================================
        ВЫЕЗЖАЮЩЕЕ МЕНЮ
-
-       Все размеры через rem.
-
-       rem берётся непосредственно от html,
-       который масштабируется в самом корне файла.
        ===================================================== */
-
-    .Menu {
+    .menu {
         position: absolute;
-
         top: 0;
         left: 0;
-
         width: 100vw;
         height: 100dvh;
-
         background-color: #fff;
-
         transform: translateX(-100%);
-
         transition:
             transform 0.3s ease-in-out;
-
         z-index: 1000;
-
         display: flex;
-
         justify-content: center;
-        /* align-items: center; */
-
         color: #000;
     }
 
-    .Menu_Content {
+    .menu-content {
         width: 50rem;
-
         display: flex;
         margin-top: 27.5dvh;
-
         align-items: center;
         flex-direction: column;
-
         gap: 3.5rem;
     }
 
-    .Menu_Navigation {
+    .menu-navigation {
         width: 100%;
-
         font-size: 2.5rem;
         font-weight: 450;
-
         display: flex;
         flex-direction: column;
-
         gap: 1.5rem;
     }
 
-    .Menu_Navigation li {
-        /* height: 6.75rem; */
+    .menu-navigation li {
         padding: 1.5rem;
-
         background: #F2F2F2;
     }
 
-    .Menu_Navigation_Item {
+    .menu-navigation-item {
         display: flex;
-
         align-items: center;
-
         gap: 2rem;
     }
 
-    .Menu_Navigation li.Menu_Navigation_Item_Active {
+    .menu-navigation li.menu-navigation-item-active {
         background: #F9E59F;
     }
 
-    .Menu_Navigation li.Menu_Navigation_Item_Active svg {
+    .menu-navigation li.menu-navigation-item-active svg {
         color: #000;
     }
 
-    .Menu_Navigation li.Menu_Navigation_Item_Active .Devider {
+    .menu-navigation li.menu-navigation-item-active .divider {
         background: #000000;
     }
 
-    .Devider {
+    .divider {
         height: 4.625rem;
         width: 0.1rem;
-
         background: #9b9b9b;
     }
 
-    .Menu_Navigation_Icon {
+    .menu-navigation-icon {
         width: 4.625rem;
         height: 4.625rem;
     }
 
-    .Menu_Navigation_Icon svg {
+    .menu-navigation-icon svg {
         color: #9b9b9b;
-
         --stroke: 0;
-
         stroke-width: 0px;
     }
 
-
-    .Menu_Content hr {
+    .menu-content hr {
         width: 100%;
-
-        color: #CFCFCF;
-    }
-    .Menu_Content hr {
-        width: 100%;
-
         color: #CFCFCF;
     }
 
-    .Menu_Socials_and_Devider{
+    .menu-socials-and-divider {
         width: 100%;
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
         gap: 1rem;
-        /* justify-content: center; */
-        /* text-align: center; */
     }
 
-    .Menu_Socials {
+    .menu-socials {
         --icon-height: 4rem;
-
-
         display: grid;
-
         grid-auto-flow: column;
         grid-auto-columns: fit-content;
-
         width: max-content;
-
         align-items: start;
-
         gap: 2.5rem;
     }
 
-    .Menu_Socials li {
+    .menu-socials li {
         text-align: center;
     }
 
-    .Menu_Socials a {
+    .menu-socials a {
         display: flex;
-
         justify-content: center;
         align-items: center;
     }
 
-    .Menu_Socials svg {
+    .menu-socials svg {
         color: #777;
-
         height: var(--icon-height);
         width: auto;
-
         display: block;
     }
 
-
-
-    .Menu.Active {
+    .menu.active {
         transform: translateX(0);
     }
-} 
+
+}
