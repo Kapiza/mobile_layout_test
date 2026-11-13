@@ -4,5 +4,3 @@ document.documentElement.style.setProperty(
   '--sidebar-collapsed-width',
   `${logoWidth}px`
 );
-
-console.log("Logo_width: " + logoWidth)

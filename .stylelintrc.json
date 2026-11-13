@@ -2,6 +2,7 @@
   "extends": "stylelint-config-standard",
   "rules": {
     "selector-max-type": 0,
-    "selector-max-id": 0
+    "selector-max-id": 0,
+    "selector-class-pattern": "^[a-zа-яё0-9]+(-[a-zа-яё0-9]+)*$"
   }
 }

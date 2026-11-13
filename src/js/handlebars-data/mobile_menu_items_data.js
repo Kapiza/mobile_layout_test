@@ -1,6 +1,6 @@
 const ICONS = {
 home: `
-    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"
+    <svg class="menu-navigation-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"
         fill="currentColor" stroke="currentColor" stroke-linejoin="miter" aria-hidden="true">
             <path d="M64,56.38c-0.01-0.02-0.03-0.04-0.04-0.07c-1.29-2.24-2.58-4.48-3.87-6.71c-1.89-3.27-3.78-6.54-5.67-9.81
                 l-0.03,0.04l0.03-0.06H22.7l-2.37,4.08h31.72c2.87,4.98,4.88,8.49,4.9,8.56c-16.63,0-33.23,0-49.83,0
@@ -17,7 +17,7 @@ home: `
 };
 
 const nav_items = [
-  { label: 'Главная', href: '#', icon: ICONS.home, cls: 'Menu_Navigation_Item_Active' },
+  { label: 'Главная', href: '#', icon: ICONS.home, cls: 'menu-navigation-li-active' },
   { label: 'Кредо', href: '#', icon: ICONS.home, cls: '' },
   { label: 'Текущий сезон', href: '#', icon: ICONS.home, cls: '' },
   { label: 'Роли', href: '#', icon: ICONS.home, cls: '' },
@@ -25,5 +25,4 @@ const nav_items = [
   { label: 'Как начать играть', href: '#', icon: ICONS.home, cls: '' },
   { label: 'Правила', href: '#', icon: ICONS.home, cls: '' },
   { label: 'FAQ', href: '#', icon: ICONS.home, cls: '' },
- 
 ];

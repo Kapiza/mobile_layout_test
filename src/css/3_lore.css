@@ -2,22 +2,22 @@
    3_lore.css — compacted
 ========================================================= */
 
-.wrapper{
+.wrapper {
     background-image: url("../../public/img/lore_background.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-main{
+.main {
     flex: 1;
-    min-width: 0;        /* иначе содержимое растягивает flex-элемент по ширине */
-    min-height: 0;       /* иначе растягивает по высоте */
+    min-width: 0; /* иначе содержимое растягивает flex-элемент по ширине */
+    min-height: 0; /* иначе растягивает по высоте */
     display: flex;
 }
 
 /* MAIN CONTENT (desktop default) */
-.Main_Content{
+.main-content {
     width: 100%;
     height: 100%;
     display: flex;
@@ -29,21 +29,26 @@ main{
 }
 
 /* WRAPPERS */
-.Lore_Info_Wrapper,
-.Lore_Images_Wrapper{
+.lore-info-wrapper,
+.lore-images-wrapper {
     min-width: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.Lore_Info_Wrapper{ flex: 6; }
-.Lore_Images_Wrapper{ flex: 4; }
+
+.lore-info-wrapper {
+    flex: 6;
+}
+
+.lore-images-wrapper {
+    flex: 4;
+}
 
 /* TEXT */
-.Lore_Info{
+.lore-info {
     display: flex;
     flex-direction: column;
-    /* gap: clamp(16px, 2vw, 24px); */
     gap: 2.5rem;
     max-width: 720px;
     min-height: 0;
@@ -51,53 +56,35 @@ main{
     width: 100%;
     color: black;
 }
-.Lore_Info *{ color: inherit; }
 
-.Lore_Info h1{
+.lore-info * {
+    color: inherit;
+}
+
+.lore-title {
     font-size: clamp(2.5rem, 4vw, 3.5rem);
-    font-weight: medium;
+    font-weight: 500;
     line-height: 1;
     white-space: nowrap;
     width: fit-content;
 }
 
-.Lore_Info p{
+.lore-text {
     font-size: clamp(1rem, .45vw + .9rem, 1.2rem);
     hyphens: auto;
     text-align: justify;
     text-indent: 2rem;
 }
 
-/* Specific description blocks share the same p sizing */
-.Закон_и_преступность p,
-.Закат_Романтики p,
-.Медицина p{
+/* Specific description blocks share the same text sizing */
+.закон-и-преступность .lore-text,
+.закат-романтики .lore-text,
+.медицина .lore-text {
     font-size: clamp(0.8rem, .35vw + .75rem, 1rem);
 }
 
-
-
-
-
 /* IMAGES */
-.Lore_Images{
-    position: relative;
-    width: min(42vw, 760px);
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.Lore_Images img{
-    position: absolute;
-    object-fit: contain;
-    object-position: center;
-    user-select: none;
-    pointer-events: none;
-}
-
-.Lore_Img{
+.lore-img {
     width: min(100%, 760px);
     height: auto;
 }
@@ -107,8 +94,8 @@ main{
 ========================================================= */
 
 /* IMAGE TOP + mobile layout tweaks */
-@media (max-width: 1200px){
-    .Main_Content{
+@media (width <= 1200px) {
+    .main-content {
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
@@ -117,26 +104,32 @@ main{
     }
 
     /* order: image first, text below */
-    .Lore_Images_Wrapper{ order: 1; height: 100%; flex: 6}
-    .Lore_Info_Wrapper  { order: 2; height: 100%; flex: 4}
+    .lore-images-wrapper {
+        order: 1;
+        height: 100%;
+        flex: 6;
+    }
+
+    .lore-info-wrapper {
+        order: 2;
+        height: 100%;
+        flex: 4;
+    }
 
     /* make both blocks equal-flex and allow proper flex overflow */
-    .Lore_Images_Wrapper,
-    .Lore_Info_Wrapper{
+    .lore-images-wrapper,
+    .lore-info-wrapper {
         min-height: 0;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .Daily_Lives_Description p{
+    .daily-lives-description .lore-text {
         font-size: clamp(1.1rem, .4vw + .8rem, 1.15rem);
-    /* font-size: clamp(1rem, .45vw + .9rem, 1.2rem); */
-
     }
 
-
-    .Lore_Info{
+    .lore-info {
         align-items: center;
         max-width: 760px;
         width: 100%;
@@ -144,129 +137,61 @@ main{
         max-height: 100%;
     }
 
-    .Lore_Info_Description{
+    .lore-info-description {
         height: 67.5%;
         padding: 0 2.5rem;
     }
 
-    /* .scroll_box{
-        scrollbar-gutter: stable;
-        overflow-y: auto;
-        padding: 0 10px; 
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
 
-        --mask-top: rgba(0, 0, 0, 0);
-        --mask-bottom: rgba(0, 0, 0, 0);
+    /* Дорожка */
+    ::-webkit-scrollbar-track {
+        background: #bdbdbd;
+    }
 
-        -webkit-mask-image: linear-gradient(
-            to bottom,
-            var(--mask-top) 0%,
-            rgba(0, 0, 0, 1) 10%,
-            rgba(0, 0, 0, 1) 90%,
-            var(--mask-bottom) 100%
-        );
-        mask-image: linear-gradient(
-            to bottom,
-            var(--mask-top) 0%,
-            rgba(0, 0, 0, 1) 15%,
-            rgba(0, 0, 0, 1) 85%,
-            var(--mask-bottom) 100%
-        );
+    /* Ползунок */
+    ::-webkit-scrollbar-thumb {
+        background: rgb(0 0 0 / 50%);
+        border-radius: 10px;
+    }
 
-        -webkit-mask-clip: padding-box;
-        mask-clip: padding-box;
-    } */
+    /* При наведении */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #888;
+    }
 
-::-webkit-scrollbar {
-    width: 5px;
-}
-
-/* Дорожка */
-::-webkit-scrollbar-track {
-    background:  #bdbdbd;
-}
-
-/* Ползунок */
-::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,0.5);
-    border-radius: 10px;
-}
-
-/* При наведении */
-::-webkit-scrollbar-thumb:hover {
-    background: #888;
-}
-
-    .Lore_Images{ width: min(70vw, 520px); }
-    .Lore_Img{ height: 100%; width: auto; }
-}
-
-/* small laptop */
-@media (max-width: 1200px){
-    /* .Main_Content{ gap: .5rem; padding: .5rem; }
-    .Lore_Images{ width: min(38vw, 520px); }
-    .Lore_Info h1{ font-size: 2.8rem; }
-    .Lore_Info p{ font-size: 1rem; line-height: 1.65; } */
-    /* .Entertainment_Description p{font-size: 0.8rem; } */
-}
-
-/* tablet */
-@media (max-width: 900px){
-    /* .Main_Content{ gap: 0rem; padding: 2rem; }
-    .Lore_Images{ width: min(80vw, 520px); }
-    .Lore_Info{ max-width: none; } */
-}
-
-/* phone */
-@media (max-width: 600px){
-    /* .Main_Content{ padding: 1.5rem 1.25rem; gap: 2rem; }
-    .Lore_Images{ width: min(92vw, 430px); }
-    .Lore_Info h1{ font-size: 2.3rem; }
-    .Lore_Info p{ font-size: .95rem; line-height: 1.6; text-indent: 1.2rem; } */
-}
-
-/* small phone */
-@media (max-width: 480px){
-    /* .Main_Content{ padding: 1rem; gap: 1.5rem; } */
-    /* .Lore_Images{ width: 100%; max-width: 340px; } */
-    /* .Lore_Info h1{ font-size: 2rem; } */
-    /* .Lore_Info p{ font-size: .9rem; line-height: 1.55; text-indent: 1rem; } */
+    .lore-img {
+        height: 100%;
+        width: auto;
+    }
 }
 
 /* BREAKPOINT */
-/* screen width < 500px - mobile layout */
-@media (max-width: 700px) {
 
-    .Main_Content{
-        padding: 0;
-    }
-
-    html{
-        overflow: hidden;
-    }
-    body {
+/* screen width < 700px - mobile layout */
+@media (width <= 700px) {
+    .page-root {
         overflow: hidden;
     }
 
-    .wrapper{
+    .page-body {
+        overflow: hidden;
+    }
+
+    .wrapper {
         height: 100dvh;
     }
 
-    .Main_Content {
-        /* padding-bottom: 128px; */
+    .main-content {
+        --fade: 6rem; /* высота затуманенной зоны */
+        --mask-bottom: rgb(0 0 0 / 0%); /* 0 = fade включён, 1 = выключен */
+
+        padding: 0;
         height: 90%;
         overflow-y: scroll;
-        scrollbar-width: none;  
-    }
-
-    .Main_Content{
-        --fade: 6rem;                      /* высота затуманенной зоны */
-        --mask-bottom: rgba(0, 0, 0, 0);   /* 0 = fade включён, 1 = выключен */
-
-        -webkit-mask-image: linear-gradient(
-            to bottom,
-            #000 calc(97% - var(--fade)),
-            var(--mask-bottom) 97%
-        );
+        scrollbar-width: none;
         mask-image: linear-gradient(
             to bottom,
             #000 calc(97% - var(--fade)),
@@ -274,23 +199,16 @@ main{
         );
     }
 
-    .Lore_Info h1{ 
-        font-size: 5.75rem; 
-        white-space: normal; 
-        overflow-wrap: break-word; 
-        text-align: center; 
+    .lore-title {
+        font-size: 5.75rem;
+        overflow-wrap: break-word;
+        text-align: center;
         white-space: pre-line;
     }
-    .Lore_Info p{ font-size: 3.375rem; line-height: 1.125; text-indent: 5rem; }
 
-    .Мир_Прекрасной_Эпохи h1{ 
-        /* font-size: 5.75rem;  */
-        /* white-space: pre-line; */
-     }
-    /* .Мир_Прекрасной_Эпохи h1 .first-word{ font-size: 5.75rem;  } */
-
-
-
-
+    .main-content .lore-text {
+        font-size: 3.375rem;
+        line-height: 1.125;
+        text-indent: 5rem;
+    }
 }
-

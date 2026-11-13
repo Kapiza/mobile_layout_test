@@ -1,5 +1,5 @@
 const root = document.querySelector('.embla')
-const viewport = root.querySelector('.embla__viewport')
+const viewport = root.querySelector('.embla-viewport')
 
 const slideTitles = [
   "Мир \"Прекрасной эпохи\"",
@@ -25,12 +25,12 @@ const embla = EmblaCarousel(viewport, {
 // всё работает для каждого.
 const $$ = (selector) => document.querySelectorAll(selector)
 
-const prevBtns = $$('.embla__button--prev')
-const nextBtns = $$('.embla__button--next')
-const dotsRoots = $$('.embla__dots')
-const counterCurrents = $$('.embla__counter__current')
-const counterTotals = $$('.embla__counter__total')
-const titleNodes = $$('.embla__title')
+const prevBtns = $$('.embla-button-prev')
+const nextBtns = $$('.embla-button-next')
+const dotsRoots = $$('.embla-dots')
+const counterCurrents = $$('.embla-counter-current')
+const counterTotals = $$('.embla-counter-total')
+const titleNodes = $$('.embla-title')
 
 /* BUTTONS */
 prevBtns.forEach((btn) => btn.addEventListener('click', () => embla.scrollPrev()))
@@ -46,7 +46,7 @@ const dots = []
 dotsRoots.forEach((dotsRoot) => {
   embla.scrollSnapList().forEach((_, i) => {
     const btn = document.createElement('button')
-    btn.className = 'embla__dot'
+    btn.className = 'embla-dot'
     btn.addEventListener('click', () => embla.scrollTo(i))
     dotsRoot.appendChild(btn)
     dots.push({ btn, i })
@@ -56,7 +56,7 @@ dotsRoots.forEach((dotsRoot) => {
 const updateDots = () => {
   const selected = embla.selectedScrollSnap()
   dots.forEach(({ btn, i }) => {
-    btn.classList.toggle('embla__dot--selected', i === selected)
+    btn.classList.toggle('embla-dot-selected', i === selected)
   })
 }
 

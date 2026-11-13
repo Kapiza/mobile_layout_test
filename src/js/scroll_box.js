@@ -1,4 +1,4 @@
-document.querySelectorAll('.Main_Content').forEach((el) => {
+document.querySelectorAll('.main-content').forEach((el) => {
   const FADE_RANGE = 50; // за сколько px до конца туман полностью исчезает
 
   function update() {
